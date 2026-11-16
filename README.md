@@ -24,7 +24,7 @@ A Flask web application that helps a college manage campus placements. Students 
 
 ## Project Structure
 ```
-final-project/
+placement-tracker-system/
 ├── app.py               # Flask routes and database logic
 ├── database.sql         # MySQL schema
 ├── requirements.txt
@@ -53,7 +53,7 @@ final-project/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/placement-tracker-system.git
+git clone https://github.com/PriyankaM2006/placement-tracker-system.git
 cd placement-tracker-system
 ```
 
