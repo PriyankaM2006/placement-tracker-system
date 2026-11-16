@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Drive Registration</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      background-size: cover;
+      background-image: url("../static/images/img4.jpg");
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    .form-container {
+      max-width: 600px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      margin: 40px auto;
+      transition: transform 0.3s ease;
+    }
+
+    .form-container:hover {
+      transform: scale(1.01);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077b6;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: #00b4d8;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005f87;
+    }
+
+    footer {
+      background: #023e8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+        margin: 20px;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Campus Placement Portal</div>
+   <nav>
+  <ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('student_check') }}">Student Management</a></li>
+    <li><a href="{{ url_for('login') }}">Admin</a></li>
+    <li><a href="{{ url_for('register') }}">Register</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <div class="form-container">
+    <h2>Placement Drive Registration</h2>
+    <form action="{{ url_for('register') }}" method="post">
+      <label for="studentid">Student ID</label>
+      <input type="text" id="studentid" name="studentid" placeholder="e.g. STU2025001" required>
+      
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <!-- <label for="email">Email ID</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required> -->
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+      <label for="department">Department</label>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+      </select>
+
+      <label for="year">Graduation Year</label>
+      <input type="number" id="year" name="year" min="2023" max="2030" placeholder="e.g. 2025" required>
+
+      <label for="company">Company</label>
+      <input type="text" id="company" name="company" placeholder="e.g. Infosys" required>
+
+
+      <input type="submit" value="Register Now">
+    </form>
+  </div>
+
+  <footer>
+    <p>Contact: placement@campus.edu | Phone: +91-9876543210</p>
+    <p>&copy; 2025 Campus Placement Portal. All rights reserved.</p>
+    <p>Developed by Placement Cell Team</p>
+  </footer>
+
+</body>
+</html>

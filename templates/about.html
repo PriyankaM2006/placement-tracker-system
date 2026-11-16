@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Placement Tracker System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background: url("../static/images/img5.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      background-color: rgba(0, 51, 102, 0.9);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.7);  /* semi-transparent to see background clearly */
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .container h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .container p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #fff;
+      background-color: rgba(0, 51, 102, 0.9);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Placement Tracker System</div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('student_check') }}">Student Management</a></li>
+        <li><a href="{{ url_for('login') }}">Admin</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <!-- <li><a href="{{ url_for('about') }}">About Us</a></li> -->
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>About This Project</h2>
+    <p><strong>Placement Tracker System</strong> is a lightweight web application designed to help colleges and universities manage and track student placement data easily and effectively.</p>
+    <p>With this system, administrators can:</p>
+    <ul>
+      <li>Insert and maintain student placement records</li>
+      <li>View and search existing records quickly</li>
+      <li>Analyze placement statistics and company trends</li>
+    </ul>
+    <p>Our goal is to simplify placement data management, improve transparency, and help institutions better support students in their career journeys.</p>
+  </div>
+  <footer>
+    &copy; 2025 Placement Tracker System. All rights reserved.
+  </footer>
+</body>
+</html>

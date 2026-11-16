@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Student Registration</title>
+  <link rel="stylesheet" href="/static/student_view.css">
+  <style>
+    body {
+      background-color: #e3f2fd;
+      font-family: 'Segoe UI', sans-serif;
+       background: url("../static/images/img13.avif") no-repeat center center fixed;
+      margin: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #1565c0;
+    }
+    .details {
+      margin-top: 20px;
+    }
+    .details label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    .details p {
+      margin: 0;
+      padding: 5px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Student Management</div>
+  <nav>
+  <ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('student_check') }}">Student Management</a></li>
+    <li><a href="{{ url_for('login') }}">Admin</a></li>
+    <li><a href="{{ url_for('register') }}">Register</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <div class="container">
+    <h1>Student Registration Details</h1>
+
+    {% if student %}
+    <div class="details">
+      <label>Student ID:</label>
+      <p>{{ student.student_id }}</p>
+      <label>Name:</label>
+      <p>{{ student.name }}</p>
+      <!-- <label>Email:</label>
+      <p>{{ student.email }}</p> -->
+      <label>Phone:</label>
+      <p>{{ student.phone }}</p>
+      <label>Department:</label>
+      <p>{{ student.department }}</p>
+      <label>Graduation Year:</label>
+      <p>{{ student.graduation_year }}</p>
+      <label>Company:</label>
+      <p>{{ student.company or 'N/A' }}</p>
+      <label>Status:</label>
+      <p>{{ student.status or 'N/A' }}</p>
+    </div>
+    {% else %}
+      <div class="details">
+        <p>No data found for this student.</p>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <footer>
+    &copy; 2025 Placement Tracker System
+  </footer>
+</body>
+</html>

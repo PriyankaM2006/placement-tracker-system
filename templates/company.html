@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Details</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("../static/images/company_back.jfif") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      /* remove background and shadow so the bg is visible */
+      background: transparent;
+      border-radius: 12px;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .company-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: rgba(0,0,0,0.5); /* semi-transparent so text is readable */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .company-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .company-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-right: 20px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    .company-details h2 {
+      margin: 0 0 10px 0;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .company-details p {
+      margin: 0;
+      color: #ddd;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Company Details</div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('student_check') }}">Student Management</a></li>
+        <li><a href="{{ url_for('login') }}">Admin</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Top Recruiting Companies</h1>
+
+    <div class="company-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+      <div class="company-details">
+        <h2>Google</h2>
+        <p>Specializes in internet-related services and products, including search, cloud computing, and advertising.</p>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+      <div class="company-details">
+        <h2>Amazon</h2>
+        <p>Focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.</p>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <img src="https://bihedvg.org/wp-content/uploads/2023/05/infosys.jpg" alt="Infosys Logo">
+      <div class="company-details">
+        <h2>Infosys</h2>
+        <p>Provides digital services and consulting, helping clients in over 50 countries.</p>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <img src="https://th.bing.com/th/id/OIP.FV_wFyU19BBJ9FG72LkshAHaHa?w=170&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="TCS Logo">
+      <div class="company-details">
+        <h2>TCS</h2>
+        <p>A global leader in IT services, consulting, and business solutions with a large network of innovation labs.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Placement Tracker System. All rights reserved.</p>
+    <p>Developed by Placement Cell Team</p>
+  </footer>
+
+</body>
+</html>

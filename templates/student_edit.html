@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Student Registration</title>
+  <style>
+    body {
+      background-color: #e3f2fd;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #1565c0;
+    }
+    label {
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #90caf9;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #1976d2;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .flash {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #fff3cd;
+      border-radius: 5px;
+      color: #856404;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #003366;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Student Management</div>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('student_check') }}">Student Management</a></li>
+      <li><a href="{{ url_for('login') }}">Admin</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Edit Registration</h1>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" action="{{ url_for('student_edit', student_id=student.student_id) }}">
+    <label>Student ID</label>
+    <input type="text" name="student_id" value="{{ student.student_id }}" readonly>
+
+    <label>Full Name</label>
+    <input type="text" name="name" value="{{ student.name }}" required>
+
+    <!-- <label>Email</label>
+    <input type="email" name="email" value="{{ student.email }}" required> -->
+
+    <label>Phone</label>
+    <input type="text" name="phone" value="{{ student.phone }}" required>
+
+    <label>Department</label>
+    <input type="text" name="department" value="{{ student.department }}" required>
+
+    <label>Graduation Year</label>
+    <input type="number" name="graduation_year" value="{{ student.graduation_year }}" required>
+
+    <label>Company</label>
+    <input type="text" name="company" value="{{ student.company }}">
+
+    <button type="submit">Update</button>
+  </form>
+</div>
+
+<footer>
+  &copy; 2025 Placement Tracker System
+</footer>
+</body>
+</html>

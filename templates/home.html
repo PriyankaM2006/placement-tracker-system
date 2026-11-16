@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Tracker System</title>
+  <style>
+     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("../static/images/img3.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.9);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(3px);
+      border-radius: 10px;
+      margin: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0059b3;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+      backdrop-filter: blur(3px);
+    }
+
+    .feature-box {
+      background-color: rgba(255,255,255,0.8);
+      color: #003366;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box a {
+      text-decoration: none;
+      color: #003366;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0, 51, 102, 0.9);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Student Management</div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('student_check') }}">Student Management</a></li>
+        <li><a href="{{ url_for('login') }}">Admin</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <!-- <li><a href="{{ url_for('about') }}">About Us</a></li> -->
+
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to the Placement Tracker System</h1>
+    <p>Track placements, manage student data, and analyze performance with ease.</p>
+    <a href="{{ url_for('register') }}" class="btn">Get Started</a>
+  </section>
+
+  <section class="features">
+    <div class="feature-box">
+      <a href="{{ url_for('student_check') }}"><b>Student Management</b></a>
+      <p>View student profiles.</p>
+    </div>
+x    <div class="feature-box">
+      <a href="{{ url_for('home_com') }}"><b>Company details</b></a>
+      <p>Maintain a database of recruiting companies and roles offered.</p>
+    </div>
+    <div class="feature-box">
+  <li><a href="{{ url_for('about') }}"><b>About Us</b></a></li>
+
+  <p>view About us page for this project</p>
+</div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Placement Tracker System. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
